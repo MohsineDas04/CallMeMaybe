@@ -1,0 +1,102 @@
+mlakhlil@MohsinePc /m/d/1/CallMeMaybe (main)> uv run python -Bm src
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|████████████████████████████████████████████████████████████████| 311/311 [00:04<00:00, 73.74it/s]
+id of openbrace: 90
+==========================================
+encoded prompt : [9330, 525, 264, 729, 8098, 16391, 17847, 11, 697, 2618, 374, 311, 2677, 470, 729, 429, 3880, 311, 387, 2598, 448, 279, 4362, 5977, 11, 2701, 279, 5944, 3685, 13608, 40581, 1210, 366, 46385, 9934, 2661, 320, 327, 13, 364, 3838, 374, 279, 2629, 315, 220, 17, 323, 220, 18, 10170, 29, 2894, 606, 1210, 27, 1688, 829, 320, 327, 13, 364, 8822, 2891, 32964, 16018, 2894, 13786, 1210, 366, 13786, 448, 807, 2299, 2750, 304, 2951, 320, 327, 13, 5360, 64, 1210, 220, 17, 13, 15, 11, 364, 65, 1210, 220, 18, 13, 15, 13507, 7810, 15007, 944, 3512, 2550, 4113, 3650, 279, 2661, 2951, 47111, 729, 525, 508, 5152, 1712, 3153, 1131, 8822, 2891, 32964, 516, 4008, 1131, 2212, 1378, 5109, 3786, 323, 470, 862, 2629, 15670, 5029, 12854, 64, 1210, 15168, 929, 1712, 5808, 1131, 4082, 4567, 364, 65, 1210, 15168, 929, 1712, 5808, 1131, 4082, 863, 2137, 4675, 28, 4971, 929, 1712, 5808, 1131, 4082, 46259, 5712, 1712, 3153, 1131, 8822, 1889, 3744, 516, 4008, 1131, 31115, 264, 42113, 1943, 369, 264, 1697, 553, 829, 15670, 5029, 12854, 606, 1210, 15168, 929, 1712, 5808, 1131, 917, 863, 2137, 4675, 28, 4971, 929, 1712, 5808, 1131, 917, 46259, 5712, 1712, 3153, 1131, 8822, 43277, 3904, 516, 4008, 1131, 45695, 264, 914, 323, 470, 279, 27437, 1102, 15670, 5029, 12854, 82, 1210, 15168, 929, 1712, 5808, 1131, 917, 863, 2137, 4675, 28, 4971, 929, 1712, 5808, 1131, 917, 46259, 5712, 1712, 3153, 1131, 8822, 3062, 39794, 12993, 516, 4008, 1131, 47866, 279, 9334, 3704, 315, 264, 1372, 15670, 5029, 12854, 64, 1210, 15168, 929, 1712, 5808, 1131, 4082, 863, 2137, 4675, 28, 4971, 929, 1712, 5808, 1131, 4082, 46259, 5712, 1712, 3153, 1131, 8822, 5228, 7660, 3904, 6615, 41832, 516, 4008, 1131, 23107, 678, 56015, 12579, 264, 20180, 5383, 304, 264, 914, 15670, 5029, 12854, 2427, 3904, 1210, 15168, 929, 1712, 5808, 1131, 917, 4567, 364, 26387, 1210, 15168, 929, 1712, 5808, 1131, 917, 4567, 364, 83631, 1210, 15168, 929, 1712, 5808, 1131, 917, 863, 2137, 4675, 28, 4971, 929, 1712, 5808, 1131, 917, 3789, 60, 6739, 374, 697, 1156, 2618, 25, 1128, 374, 279, 2629, 315, 220, 20, 323, 220, 16, 15, 1782, 1537, 3166, 498, 1265, 1173, 374, 2677, 429, 15316, 32864, 15593, 1265, 387, 7117, 438, 264, 3175, 3950]
+ ==========================================
+All logits probs
+==========================================
+==========================================
+score for openbrace ({) (likely the highest): 11.3828125
+the highest one is : 18.90625
+==========================================
+output 1: {"prompt
+last three chars are: mpt
+output 1: {"prompt":
+last three chars are: t":
+output 1: {"prompt": "
+last three chars are: : "
+output 1: {"prompt": "What
+last three chars are: hat
+output 1: {"prompt": "What is
+last three chars are:  is
+output 1: {"prompt": "What is the
+last three chars are: the
+output 1: {"prompt": "What is the sum
+last three chars are: sum
+output 1: {"prompt": "What is the sum of
+last three chars are:  of
+output 1: {"prompt": "What is the sum of
+last three chars are: of
+output 1: {"prompt": "What is the sum of 5
+last three chars are: f 5
+output 1: {"prompt": "What is the sum of 5 and
+last three chars are: and
+output 1: {"prompt": "What is the sum of 5 and
+last three chars are: nd
+output 1: {"prompt": "What is the sum of 5 and 1
+last three chars are: d 1
+output 1: {"prompt": "What is the sum of 5 and 10
+last three chars are:  10
+output 1: {"prompt": "What is the sum of 5 and 10?",
+last three chars are: ?",
+output 1: {"prompt": "What is the sum of 5 and 10?", "
+last three chars are: , "
+output 1: {"prompt": "What is the sum of 5 and 10?", "name
+last three chars are: ame
+output 1: {"prompt": "What is the sum of 5 and 10?", "name":
+last three chars are: e":
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "
+last three chars are: : "
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn
+last three chars are: "fn
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add
+last three chars are: add
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers
+last three chars are: ers
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers",
+last three chars are: s",
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "
+last three chars are: , "
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters
+last three chars are: ers
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters":
+last three chars are: s":
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters": {"
+last three chars are:  {"
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters": {"a
+last three chars are: {"a
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters": {"a":
+last three chars are: a":
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters": {"a":
+last three chars are: ":
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters": {"a": 5
+last three chars are: : 5
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters": {"a": 5.
+last three chars are:  5.
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters": {"a": 5.0
+last three chars are: 5.0
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters": {"a": 5.0,
+last three chars are: .0,
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters": {"a": 5.0, "
+last three chars are: , "
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters": {"a": 5.0, "b
+last three chars are:  "b
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters": {"a": 5.0, "b":
+last three chars are: b":
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters": {"a": 5.0, "b":
+last three chars are: ":
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters": {"a": 5.0, "b": 1
+last three chars are: : 1
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters": {"a": 5.0, "b": 10
+last three chars are:  10
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters": {"a": 5.0, "b": 10.
+last three chars are: 10.
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters": {"a": 5.0, "b": 10.0
+last three chars are: 0.0
+output 1: {"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters": {"a": 5.0, "b": 10.0}}
+
+last three chars are: }}
+
+{"prompt": "What is the sum of 5 and 10?", "name": "fn_add_numbers", "parameters": {"a": 5.0, "b": 10.0}}
