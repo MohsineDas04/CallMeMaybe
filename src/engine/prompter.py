@@ -1,6 +1,6 @@
 from src.layers import load_available_funcs, get_vocabulary
 from src.tools import encode, decode, get_logits
-from llm_sdk import Small_LLM_Model
+from llm_sdk.llm_sdk import Small_LLM_Model
 import numpy as np
 
 
@@ -20,7 +20,7 @@ def send_prompt(model_ins: Small_LLM_Model, prompt: str, **kwargs):
     print("=" * 42)
     print("=" * 42)
     print(f"score for openbrace ({{) (likely the highest): {openbrace_proba}")
-    print(f"the highest one is : {logits.max()}")
+    print(f"the highest one is : {logits.max()}\n")
     print("=" * 42)
     mask = np.full(logits.shape, -np.inf)
     mask[openbrace_id] = logits[openbrace_id]
@@ -28,6 +28,10 @@ def send_prompt(model_ins: Small_LLM_Model, prompt: str, **kwargs):
     encoded_prompt.append(forced_token)
     output_list.append(forced_token)
     output = decode(model_ins, output_list)
+    print("=" * 42)
+    print(f"output {2}: {output}\n")
+    print(f"new token {repr(decode(model_ins, [forced_token]))}\n")
+    print("=" * 42)
     logits = get_logits(model_ins, encoded_prompt)
     mask = np.full(logits.shape, -np.inf)
     mask[vocab['"']] = logits[vocab['"']]
@@ -35,8 +39,12 @@ def send_prompt(model_ins: Small_LLM_Model, prompt: str, **kwargs):
     encoded_prompt.append(forced_token)
     output_list.append(forced_token)
     output = decode(model_ins, output_list)
+    print("=" * 42)
+    print(f"output {2}: {output}\n")
+    print(f"new token {repr(decode(model_ins, [forced_token]))}\n")
+    print("=" * 42)
     ############################################################
-    i = 1
+    i = 3
     last_three: str = ""
     while last_three[:2] != "}}":
         logits = get_logits(model_ins, encoded_prompt)
@@ -47,7 +55,9 @@ def send_prompt(model_ins: Small_LLM_Model, prompt: str, **kwargs):
         output_list.append(forced_token)
         output = decode(model_ins, output_list)
         last_three = output[-3:]
-        print(f"output {i}: {output}")
-        print(f"last three chars are: {last_three}")
+        print("=" * 42)
+        print(f"output {i}: {output}\n")
+        print(f"new token {repr(decode(model_ins, [forced_token]))}\n")
+        print("=" * 42)
     # output = decode(model_ins, output_list)
     return output
