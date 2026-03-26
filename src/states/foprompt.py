@@ -11,8 +11,5 @@ def run_fo_prompt(
 ):
     full_output: list[int] = []
     for vocab in needed_vocab_ids:
-        logits = get_logits(model_ins, encoded_prompt)
-        mask = np.full(logits.shape, -np.inf)
-        mask[vocab] = logits[vocab]
-        encoded_prompt.append(int(np.argmax(mask)))
-        output_list.append(int(np.argmax(mask)))
+        encoded_prompt.append(vocab)
+        output_list.append(vocab)

@@ -6,9 +6,20 @@ from src.states.frprompt import run_fr_prompt
 import numpy as np
 
 
-def send_prompt(model_ins: Small_LLM_Model, prompt: str, **kwargs) -> str:
+def send_prompt(
+    model_ins: Small_LLM_Model, task: str, av_funcs: list, **kwargs
+) -> str:
     output_list = []
-    encoded_prompt = encode(model_ins, prompt)
+    encoded_prompt = encode(
+        model_ins,
+        "you are a function calling ai assistant, your job is to always return function that needs to be called with the needed arguments, following the structure below"
+        + "{'prompt': <exact prompt given (ex. 'What is the sum of 2 and 3?)>,'name':<function name (ex. 'fn_add_numbers)>,'parameters': <parameters with they're values in json (ex. {'a': 2.0, 'b': 3.0}>}"
+        + ".don't ever output anything except the given json."
+        f"available function are {av_funcs}"
+        + f"here is your first job: {task}"
+        + "the last thing you should print is always that closing brace."
+        + "it should be brought as a single token",
+    )
     vocab = get_vocabulary(model_ins)
     # if vocab['?",Ġ"']:
     #     print(f"{decode(model_ins, [vocab['?",Ġ"']])} exists")
@@ -28,9 +39,10 @@ def send_prompt(model_ins: Small_LLM_Model, prompt: str, **kwargs) -> str:
     )
     run_fr_prompt(
         model_ins,
+        task,
         encoded_prompt,
-        vocab,
         output_list,
+        [vocab['",'], vocab['Ġ"']],
     )
 
     return decode(model_ins, output_list)
