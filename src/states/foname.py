@@ -3,8 +3,9 @@ from llm_sdk.llm_sdk import Small_LLM_Model
 import numpy as np
 
 
-def run_fr_name(
+def run_fo_name(
     model_ins: Small_LLM_Model,
     encoded_prompt: list[int],
+    needed_vocab_ids: list[int],
 ):
     pass
