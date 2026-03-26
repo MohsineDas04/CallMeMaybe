@@ -6,6 +6,7 @@ import sys
 
 
 def main():
+    start = time.time()
     model_ins = model_instantiate()
     av_funcs = load_available_funcs()
     prompts = load_prompts()
@@ -22,7 +23,6 @@ def main():
     # )
     # print(ret)
     outputs = []
-    start = time.time()
     for pr in prompts:
         print("*" * 45)
         print(f"test {test_n} prompt: {pr["prompt"]}\n")

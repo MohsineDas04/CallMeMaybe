@@ -3,6 +3,10 @@ from src.tools import encode, decode, get_logits
 from llm_sdk.llm_sdk import Small_LLM_Model
 from src.states.foprompt import run_fo_prompt
 from src.states.frprompt import run_fr_prompt
+from src.states.foname import run_fo_name
+from src.states.frname import run_fr_name
+from src.states.foparam import run_fo_param
+from src.states.frparam import run_fr_param
 import numpy as np
 
 
@@ -21,10 +25,13 @@ def send_prompt(
         + "it should be brought as a single token",
     )
     vocab = get_vocabulary(model_ins)
-    # if vocab['?",Ġ"']:
-    #     print(f"{decode(model_ins, [vocab['?",Ġ"']])} exists")
-    #     print(f"{decode(model_ins, [vocab['"']])} exists")
-    #     exit(0)
+    closings = []
+    closing_brace = []
+    for key, v in vocab.items():
+        closings.append(v) if '"' in key else None
+        (
+            closing_brace.append(v) if "}" in key else None
+        )  ## the progarm should be done now !!!!!!!!!!!!!!!!!!!!!!!
     run_fo_prompt(
         model_ins,
         encoded_prompt,
@@ -44,7 +51,40 @@ def send_prompt(
         output_list,
         [vocab['",'], vocab['Ġ"']],
     )
-
+    run_fo_name(
+        model_ins,
+        encoded_prompt,
+        [
+            vocab["name"],
+            vocab['":'],
+            vocab['Ġ"'],
+        ],
+        output_list,
+    )
+    run_fr_name(
+        model_ins,
+        encoded_prompt,
+        closings,
+        output_list,
+        [vocab['",'], vocab['Ġ"']],
+    )
+    run_fo_param(
+        model_ins,
+        encoded_prompt,
+        [
+            vocab["parameters"],
+            vocab['":'],
+            vocab['Ġ{"'],
+        ],
+        output_list,
+    )
+    run_fr_param(
+        model_ins,
+        encoded_prompt,
+        closing_brace,
+        output_list,
+        [vocab["}}"]],
+    )
     return decode(model_ins, output_list)
     # openbrace_id = vocab["{"]
     # closingbrace_id = vocab["}"]
