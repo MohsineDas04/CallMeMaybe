@@ -9,7 +9,8 @@ def run_fr_prompt(
     output_list: list[int],
     needed_chars: list[int],
 ) -> None:
-    encoded_task = encode(model_ins, task)
+    safe_task = task.replace('"', '\\"')
+    encoded_task = encode(model_ins, safe_task)
     for token in encoded_task:
         encoded_prompt.append(token)
         output_list.append(token)
