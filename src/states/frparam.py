@@ -12,7 +12,7 @@ def run_fr_param(
     vocab: dict,
 ):
     runnable: bool = True
-    brace_deltas = {
+    barce_closers = {
         vid: token_str.count("{") - token_str.count("}")
         for token_str, vid in vocab.items()
         if "{" in token_str or "}" in token_str
@@ -21,20 +21,14 @@ def run_fr_param(
     while runnable:
         logits = get_logits(model_ins, encoded_prompt)
         token = int(np.argmax(logits))
-
-        # 1. ALWAYS append the token first! (No swallowed quotes or braces)
         encoded_prompt.append(token)
         output_list.append(token)
 
-        # 2. Update the depth IF the token contains a brace
-        if token in brace_deltas:
-            brace_depth += brace_deltas[token]
+        if token in barce_closers:
+            brace_depth += barce_closers[token]
 
-            # 3. Check if we just closed the final parameters object
             if brace_depth <= 0:
-                runnable = (
-                    False  # The loop will break gracefully on the next pass
-                )
+                runnable = False
 
 
 # this will 100% work
