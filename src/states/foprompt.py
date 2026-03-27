@@ -1,4 +1,3 @@
-from src.tools import decode, get_logits
 from llm_sdk.llm_sdk import Small_LLM_Model
 
 
@@ -8,7 +7,6 @@ def run_fo_prompt(
     needed_vocab_ids: list[int],
     output_list: list[int],
 ) -> None:
-    full_output: list[int] = []
     for vocab in needed_vocab_ids:
         encoded_prompt.append(vocab)
         output_list.append(vocab)

@@ -1,5 +1,5 @@
 from src.layers import get_vocabulary
-from src.tools import encode, decode, get_logits
+from src.tools import encode, decode
 from llm_sdk.llm_sdk import Small_LLM_Model
 from src.states.foprompt import run_fo_prompt
 from src.states.frprompt import run_fr_prompt
@@ -7,7 +7,6 @@ from src.states.foname import run_fo_name
 from src.states.frname import run_fr_name
 from src.states.foparam import run_fo_param
 from src.states.frparam import run_fr_param
-import numpy as np
 
 
 def send_prompt(

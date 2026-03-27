@@ -1,4 +1,4 @@
-from src.tools import encode, decode, get_logits
+from src.tools import encode
 from llm_sdk.llm_sdk import Small_LLM_Model
 
 
