@@ -198,7 +198,3 @@ Runs aggressive type validation:
 Triggers the interactive Python debugger on the entry point:
 
 - Runs `pdb3 src/__main__.py`. Use this to step through the state machine logic line-by-line.
-
----
-
-*Powered by uv. Orchestrated by make. Engineered for Perfection.*
