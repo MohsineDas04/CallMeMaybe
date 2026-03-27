@@ -1,4 +1,4 @@
-# Constrained LLM Function Calling Engine
+# Constrained LLM Function Calling Engine (callmemaybe at 42/1337 rabat)
 
 A Python-based framework designed to execute structured function calling with small Large Language Models (LLMs). This project utilizes **constrained token-level decoding** to guarantee that the LLM outputs perfectly formatted, parseable JSON function calls without relying on the model's instruction-following capabilities alone.
 
