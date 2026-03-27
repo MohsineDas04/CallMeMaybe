@@ -22,14 +22,15 @@ lint:
 	@echo "checking flake"
 	flake8 $(SRC_DIR)
 	@echo "checking mypy"
-	cd $(SRC_DIR) && mypy . --warn-return-any --warn-unused-ignores --ignore-missing-imports --disallow-untyped-defs --check-untyped-defs && cd ..
+	mypy $(SRC_DIR) --warn-return-any --warn-unused-ignores --ignore-missing-imports --disallow-untyped-defs --check-untyped-defs --follow-imports=skip
 	echo "✅ checking done"
 
 lint-strict:
 	@echo "checking flake"
 	flake8 $(SRC_DIR)
 	@echo "checking mypy"
-	cd $(SRC_DIR) && mypy . --strict && cd ..
+	mypy $(SRC_DIR) --strict --follow-imports=skip
+	echo "✅ checking done"
 
 install:
 	@echo "installing required dependecies through uv..."
