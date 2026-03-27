@@ -15,16 +15,15 @@ def send_prompt(
     output_list = []
     encoded_prompt = encode(
         model_ins,
-        f"Available functions: {av_funcs}\n\nTask: {task}\n\nOutput the JSON function call:",
+        f"Available functions: {av_funcs}\n\nTask: {task}\n\nOutput"
+        + "the JSON function call:",
     )
     vocab = get_vocabulary(model_ins)
     closings = []
     closing_brace = []
     for key, v in vocab.items():
         closings.append(v) if '"' in key else None
-        (
-            closing_brace.append(v) if "}" in key else None
-        )
+        (closing_brace.append(v) if "}" in key else None)
     run_fo_prompt(
         model_ins,
         encoded_prompt,
